@@ -15,7 +15,7 @@ public class HitungIPSemester {
             "Keselamatan dan Kesehatan Kerja"
         };
         
-        double[][] dataNilai = new double[mataKuliah.length][2]; // 0: Nilai Angka, 1: Bobot Nilai
+        double[][] dataNilai = new double[mataKuliah.length][2]; 
         double totalBobot = 0;
 
         System.out.println("================================");
@@ -47,8 +47,6 @@ public class HitungIPSemester {
             }
             totalBobot += dataNilai[i][1];
         }
-        
-        input.close();
         
         System.out.println("====================================");
         System.out.println("Hasil Konversi Nilai");
