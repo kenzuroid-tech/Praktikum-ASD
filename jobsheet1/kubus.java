@@ -16,8 +16,10 @@ public class kubus {
         public static void tampilkanMenu(){
             System.out.println("Pilih menu yang anda inginkan");
             System.out.println("1. Hitung Volume Kubus");
-            System.out.println("2. Hitung Keliling Kubus");
+            System.out.println("2. Hitung Luas Permukaan Kubus");
+            System.out.println("3. Hitung Keliling Kubus");
         }
+
 
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
@@ -39,7 +41,7 @@ public class kubus {
                     System.out.println("Keliling kubus: " + hitungKeliling(sisi));
                     break;
                 default:
-                System.out.println("Pilihan tidak valid!");
+                System.out.println("Pilihan tidak valid");
                     break;
             }
         }
