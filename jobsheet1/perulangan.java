@@ -14,6 +14,7 @@ public class perulangan {
             n += 10;
         }
         
+        System.out.println("\nn: " + n);
         System.out.print("n: ");
         for (int i = 1; i <= n; i++) {
             if (i == 6 || i == 10) {
