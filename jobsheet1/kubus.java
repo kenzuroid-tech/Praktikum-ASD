@@ -43,7 +43,7 @@ public class kubus {
                     break;
                 case 4:
                     System.out.println("\nKeluar dari program.");
-                    return; 
+                    return;
                 default:
                     System.out.println("\nPilihan tidak valid, coba lagi.");
             }
