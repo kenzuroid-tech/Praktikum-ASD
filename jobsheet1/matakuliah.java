@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class matakuliah {
+public class mataKuliah {
 
     static void tambahJadwal(String matkul[][], int sks[], int smt[], int jmlData) {
         Scanner input = new Scanner(System.in);
