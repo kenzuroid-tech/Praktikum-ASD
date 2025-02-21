@@ -14,6 +14,11 @@ public class Mahasiswa22 {
         kelas = kls;
     }
 
+    public Mahasiswa22 (String nm, String nim){
+        nama = nm;
+        this.nim = nim;
+    }
+
     void tampilkanInformasi(){
         System.out.println("Nama: " + nama);
         System.out.println("NIM: " + nim);
