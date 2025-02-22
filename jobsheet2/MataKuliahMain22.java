@@ -11,5 +11,9 @@ public class MataKuliahMain22{
         mk1.tambahJam(1);
         mk1.kurangiJam(2);
         mk1.tampilkanInformasi();
+
+    MataKuliah22 mk2 = new MataKuliah22("Praktikum Algoritma dan Struktur Data", "RTI242009", 3, 2);
+    mk2.ubahSKS(4);
+    mk2.tampilkanInformasi();
     }
 }

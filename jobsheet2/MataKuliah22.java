@@ -7,8 +7,15 @@ public class MataKuliah22 {
         
     }
 
+    public MataKuliah22(String nm, String kd, int sks, int jmlhJam){
+        nama = nm;
+        kodeMK = kd;
+        this.sks = sks;
+        this.jmlhJam = jmlhJam;
+    }
+
     void tampilkanInformasi(){
-        System.out.println("Nama: " + nama);
+        System.out.println("\nNama: " + nama);
         System.out.println("Kode MK: " + kodeMK);
         System.out.println("SKS: " + sks);
         System.out.println("Jumlah Jam: " + jmlhJam);
@@ -19,10 +26,10 @@ public class MataKuliah22 {
     }
 
     void tambahJam(int jam){
-        jmlhJam = jam;
+        jmlhJam += jam;
     }
 
     void kurangiJam(int jam){
-        jmlhJam = jam;
+        jmlhJam -= jam;
     }
 }
