@@ -10,6 +10,8 @@ public class DataDosen22 {
             System.out.println("Jenis Kelamin   : " + (arrayOfDosen[i].jenisKelamin ? "Pria" : "Wanita"));
             System.out.println("Usia            : " + arrayOfDosen[i].usia);
             System.out.println("---------------------------------------------");
+            System.out.println();
+            System.out.println("null");
         }
     }
 
