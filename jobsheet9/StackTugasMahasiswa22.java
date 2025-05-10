@@ -1,8 +1,9 @@
+import java.util.Stack;
+
 public class StackTugasMahasiswa22 {
     
     Mahasiswa22[] stack;
     int top;
-    int buttom;
     int size;
 
     public StackTugasMahasiswa22(int size){
@@ -47,9 +48,9 @@ public class StackTugasMahasiswa22 {
         }
     }
 
-    public Mahasiswa22 peekbuttom(){
+    public Mahasiswa22 peek(){
         if (!isEmpty()) {
-            return stack[buttom];
+            return stack[0];
         } else {
             System.out.println("Stack kosong! tidak ada tugas yang dikumpulkan");
             return null;
@@ -67,4 +68,17 @@ public class StackTugasMahasiswa22 {
         return top + 1;
     }
 
+    public String konversiDesimalKeBiner(int nilai){
+    StackKonversi22 binerStack = new StackKonversi22();
+    while (kode != 0) {
+        int sisa = nilai % 2;
+        binerStack.push(sisa);
+        nilai /= 2;
+    }
+        String biner = "";
+        while (!binerStack.isEmpty()) {
+        biner += binerStack.pop();
+    }
+        return biner;
+    }
 }

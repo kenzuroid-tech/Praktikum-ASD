@@ -38,12 +38,14 @@ public class MahasiswaDemo22 {
                         scan.nextLine(); 
                         dinilai.tugasDinilai(nilai);
                         System.out.printf("Nilai Tugas %s berhasil dikumpulkan\n", dinilai.nama);
+                        String biner = stack.konversiDesimalKeBiner(nilai);
+                        System.out.println("Nilai biner tugas: " + biner);
                     } else {
                         System.out.println("Tidak ada tugas yang bisa dinilai.");
                     }
                     break;
                  case 3:
-                    Mahasiswa22 lihat = stack.peekbuttom();
+                    Mahasiswa22 lihat = stack.peek();
                     if (lihat != null) {
                     System.out.println("Tugas pertama dikumpulkan oleh " + lihat.nama);   
                     } else {
