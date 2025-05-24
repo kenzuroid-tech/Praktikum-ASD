@@ -31,6 +31,7 @@ public class SuratDemo22 {
                     System.out.print("Durasi (hari)  : ");
                     int durasi = scan.nextInt();
                     scan.nextLine(); // buang newline
+                    
                     Surat22 surat = new Surat22(id, nama, kelas, jenis, durasi);
                     stack.push(surat);
                     break;

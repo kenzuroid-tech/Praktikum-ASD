@@ -43,20 +43,30 @@ public class SingleLinkedList22 {
         }
     }
 
-    public void insertAfter(String key, Mahasiswa22 input){
+    public void insertAfter(String key, Mahasiswa22 input) {
         NodeMahasiswa22 ndInput = new NodeMahasiswa22(input, null);
         NodeMahasiswa22 temp = head;
-        do {
+        boolean found = false;
+        
+        while (temp != null) {
             if (temp.data.nama.equalsIgnoreCase(key)) {
                 ndInput.next = temp.next;
                 temp.next = ndInput;
                 if (ndInput.next == null) {
                     tail = ndInput;
                 }
+                found = true;
+                System.out.println("Data berhasil disisipkan setelah " + key);
                 break;
             }
-        } while (temp != null);
+            temp = temp.next;
+        }
+        
+        if (!found) {
+            System.out.println("Key '" + key + "' tidak ditemukan!");
+        }
     }
+
 
     public void insertAt(int index, Mahasiswa22 input){
         if (index < 0) {
