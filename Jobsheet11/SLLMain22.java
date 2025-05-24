@@ -1,86 +1,27 @@
-import java.util.Scanner;
-
 public class SLLMain22 {
-    public static void main(String[] args) {   
-        Scanner sc = new Scanner(System.in); 
+    public static void main(String[] args) {
         SingleLinkedList22 sll = new SingleLinkedList22();
 
-        int pilih;
-        do {
-            System.out.println("\nSILAHKAN PILIH MENU");
-            System.out.println("-----------------------------------------");
-            System.out.println("1. Tambahkan data Mahasiswa di awal");
-            System.out.println("2. Sisipkan data Mahasiswa menggunakan key");
-            System.out.println("3. Sisipkan data Mahasiswa menggunakan index");
-            System.out.println("4. Tampilkan data Mahasiswa");
-            System.out.println("0. Keluar");
-            System.out.print("Pilih menu: ");
-            pilih = sc.nextInt();
-            sc.nextLine(); 
+        Mahasiswa22 mhs1 = new Mahasiswa22("22212024", "Cintia", "3C", 3.5);
+        Mahasiswa22 mhs2 = new Mahasiswa22("23212201", "Bimon", "2B", 3.8);
+        Mahasiswa22 mhs3 = new Mahasiswa22("22213062", "Putri", "4C", 3.5);
+        Mahasiswa22 mhs4 = new Mahasiswa22("23212209", "Satrio", "1D", 3.7);
 
-            switch (pilih) {
-                case 1: 
-                    System.out.print("Masukkan NIM: ");
-                    String nim = sc.nextLine();
-                    System.out.print("Masukkan Nama Mahasiswa: ");
-                    String nama = sc.nextLine();
-                    System.out.print("Masukkan kelas: ");
-                    String kelas = sc.nextLine();
-                    System.out.print("Masukkan IPK: ");
-                    double ipk = sc.nextDouble();
-                    sc.nextLine(); 
-                    
-                    Mahasiswa22 mhs1 = new Mahasiswa22(nim, nama, kelas, ipk);
-                    sll.addFirst(mhs1);
-                    System.out.println("Data berhasil ditambahkan");
-                    break;
-                    
-                case 2: 
-                    System.out.print("Masukkan key: ");
-                    String key = sc.nextLine();
+        sll.addFirst(mhs4);
+        sll.addLast(mhs3);
+        sll.insertAfter("Satrio", mhs1);
+        sll.insertAt(2, mhs2);
 
-                    System.out.print("Masukkan NIM: ");
-                    String newNim = sc.nextLine();
-                    System.out.print("Masukkan Nama: ");
-                    String newNama = sc.nextLine();
-                    System.out.print("Masukkan Kelas: ");
-                    String newKelas = sc.nextLine();
-                    System.out.print("Masukkan IPK: ");
-                    double newIpk = sc.nextDouble();
-                    sc.nextLine(); 
+        System.out.println("Data index 1:");
+        sll.getData(1);
 
-                    Mahasiswa22 mhs2 = new Mahasiswa22(newNim, newNama, newKelas, newIpk);
-                    sll.insertAfter(key, mhs2);
-                    break;
-                
-                case 3: 
-                    System.out.print("Masukkan index keberapa anda ingin menyisipkan data: ");
-                    int index = sc.nextInt();
+        System.out.println("Data Mahasiswa AN Bimon ada pada index: " + sll.indexOf("Bimon"));
+        System.out.println();
 
-                    System.out.print("Masukkan NIM: ");
-                    String nimBaru = sc.nextLine();
-                    System.out.print("Masukkan Nama: ");
-                    String namaBaru = sc.nextLine();
-                    System.out.print("Masukkan Kelas: ");
-                    String kelasBaru = sc.nextLine();
-                    System.out.print("Masukkan IPK: ");
-                    double ipkBaru = sc.nextDouble();
-                    sc.nextLine();
-
-                    Mahasiswa22 mhs3 = new Mahasiswa22(nimBaru, namaBaru, kelasBaru, ipkBaru);
-                    sll.insertAt(index, mhs3);
-                    break;
-                case 4:
-                    sll.print();
-                    break;
-                    
-                case 0:
-                    System.out.println("Keluar dari program...");
-                    break;
-                    
-                default:
-                    System.out.println("Pilihan tidak valid!");
-            }
-        } while (pilih != 0);
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+        sll.removeAt(0);
+        sll.print();
     }
 }
