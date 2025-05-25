@@ -3,12 +3,13 @@ import java.util.Scanner;
 public class QueueMain22 {
 
     public static void tampilMenu() {
-        System.out.println("Masukkan operasi yang diinginkan:");
+        System.out.println("\nMasukkan operasi yang diinginkan:");
         System.out.println("1. Enqueue");
         System.out.println("2. Dequeue");
         System.out.println("3. Print");
         System.out.println("4. Peek");
         System.out.println("5. Clear");
+        System.out.println("----------------------------------");
         System.out.print("Pilihan: ");
     }
 
