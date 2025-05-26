@@ -1,4 +1,3 @@
-
 public class Mahasiswa22 {
     String nama, nim, prodi, kelas;
 
