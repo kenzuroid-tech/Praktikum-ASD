@@ -34,7 +34,6 @@ public class LayananAkademikSIAKAD {
                     Mahasiswa22 mhs = new Mahasiswa22(nim, nama, prodi, kelas);
                     antrian.tambahAntrian(mhs);
                     break;
-
                 case 2:
                     Mahasiswa22 dilayani = antrian.LayaniMahasiswa();
                     if (dilayani != null) {
@@ -44,7 +43,7 @@ public class LayananAkademikSIAKAD {
                     break;
 
                 case 3:
-                    antrian.lihatTerdepan();
+                    antrian.lihat2Terdepan();
                     break;
 
                 case 4:
