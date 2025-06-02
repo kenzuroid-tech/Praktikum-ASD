@@ -61,52 +61,36 @@ public class DoubleLinkedList22 {
         System.out.println("Node berhasil disisipkan setelah NIM " + keyNim);
     }
 
+    public void print(){
+        Node22 current = head;
+        while (current != null) {
+            current.data.tampil();
+            current = current.next;
+        }
+    }
+
     public void removeFirst(){
         if (isEmpty()) {
             System.out.println("List kosong, tidak bisa dihapus.");
             return;
-        } else {
-            if (head == tail) {
-                head = tail = null;
-            } else {
-                head = head.next;
-                head.prev = null;
-            }
         }
-        System.out.println("Data berhasil dihapus");
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = head;
+        }
     }
 
     public void removeLast(){
         if (isEmpty()) {
-            System.out.println("List Kosong, tidak bisa dihapus");
-            return;
+            System.out.println("List kosong, tidak bisa dihapus.");
         }
         if (head == tail) {
             head = tail = null;
         } else {
             tail = tail.prev;
             tail.next = null;
-        }
-        System.out.println("Data berhasil dihapus");
-    }
-
-    public Mahasiswa22 search(String nim){
-        Node22 current = head;
-
-        while (current != null) {
-            if (current.data.getNim().equals(nim)) {
-                return current.data;
-            }
-            current = current.next;
-        }
-        return null;
-    }
-
-    public void print(){
-        Node22 current = head;
-        while (current != null) {
-            current.data.tampil();
-            current = current.next;
         }
     }
 }
