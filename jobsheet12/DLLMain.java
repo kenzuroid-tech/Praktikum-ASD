@@ -14,7 +14,7 @@ public class DLLMain {
         
         System.out.print("Masukkan IPK: ");
         double ipk = scan.nextDouble();
-        scan.nextLine(); // Buang newline
+        scan.nextLine();
     
         return new Mahasiswa22(nim, nama, kelas, ipk);
     }
@@ -32,6 +32,7 @@ public class DLLMain {
             System.out.println("4. Hapus diakhir");
             System.out.println("5. Tampilkan data");
             System.out.println("6. Cari berdasarkan NIM");
+            System.out.println("7. Sisipkan data menggunakan key");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = scan.nextInt();
@@ -61,6 +62,12 @@ public class DLLMain {
                         System.out.println("Data tidak ditemukan");
                     }
                 }
+                case 7 -> {
+                    System.out.print("Masukkan NIM yang akan disisipkan setelahnya: ");
+                    String keyNim = scan.nextLine();
+                    Mahasiswa22 mhsBaru = inputMahasiswa(scan);
+                    list.insertAfter(keyNim, mhsBaru);
+                }                
                 case 0 -> System.out.println("Keluar dari program.");
                 default -> System.out.println("Pilihan tidak valid!");
             }

@@ -16,4 +16,9 @@ public class Mahasiswa22 {
     public void tampil(){
         System.out.println("NIM: " + nim + ", Nama: " + nama + ", Kelas: " + kelas + ", IPK: " + ipk);
     }
+
+    public String toString() {
+        return "NIM: " + nim + ", Nama: " + nama + ", Kelas: " + kelas + ", IPK: " + ipk;
+    }
+
 }

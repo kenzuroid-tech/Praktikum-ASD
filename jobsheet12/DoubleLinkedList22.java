@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 public class DoubleLinkedList22 {
     Node22 head;
     Node22 tail;
@@ -62,10 +64,14 @@ public class DoubleLinkedList22 {
     }
 
     public void print(){
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong!!!");
+        } else {
         Node22 current = head;
         while (current != null) {
             current.data.tampil();
             current = current.next;
+        }
         }
     }
 
@@ -74,12 +80,16 @@ public class DoubleLinkedList22 {
             System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
+
+        Mahasiswa22 dataDihapus = head.data;
+
         if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
             head.prev = head;
         }
+        System.out.println("Data sudah berhasil dihapus. Data yang berhasil dihapus adalah " + dataDihapus);
     }
 
     public void removeLast(){
@@ -92,5 +102,26 @@ public class DoubleLinkedList22 {
             tail = tail.prev;
             tail.next = null;
         }
+    }
+
+    public void insertAfter(Node22 prevNode, Mahasiswa22 data) {
+        if (prevNode == null) {
+            System.out.println("Tidak bisa menambahkan data");
+            return;
+        }
+    
+        Node22 newNode = new Node22(data);
+    
+        newNode.next = prevNode.next;
+        newNode.prev = prevNode;
+        prevNode.next = newNode;
+    
+        if (newNode.next != null) {
+            newNode.next.prev = newNode;
+        }
+    }
+
+    public void search(String nim){
+
     }
 }
