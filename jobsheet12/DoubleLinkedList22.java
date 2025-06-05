@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class DoubleLinkedList22 {
     Node22 head;
     Node22 tail;
@@ -124,4 +122,168 @@ public class DoubleLinkedList22 {
     public void search(String nim){
 
     }
-}
+
+        public void add(int index, Mahasiswa22 data) {
+            if (index < 0) {
+                System.out.println("Index tidak valid!");
+                return;
+            }
+            
+            if (index == 0) {
+                addFirst(data);
+                return;
+            }
+            
+            Node22 current = head;
+            int currentIndex = 0;
+            
+            while (current != null && currentIndex < index - 1) {
+                current = current.next;
+                currentIndex++;
+            }
+            
+            if (current == null) {
+                System.out.println("Index melebihi panjang list!");
+                return;
+            }
+            
+            Node22 newNode = new Node22(data);
+            newNode.next = current.next;
+            newNode.prev = current;
+            
+            if (current.next != null) {
+                current.next.prev = newNode;
+            } else {
+                tail = newNode;
+            }
+            
+            current.next = newNode;
+        }
+    
+        public void removeAfter(String keyNim) {
+            if (isEmpty()) {
+                System.out.println("List kosong!");
+                return;
+            }
+            
+            Node22 current = head;
+            while (current != null && !current.data.nim.equals(keyNim)) {
+                current = current.next;
+            }
+            
+            if (current == null || current.next == null) {
+                System.out.println("Tidak ada node setelah " + keyNim + " atau key tidak ditemukan");
+                return;
+            }
+            
+            Node22 toRemove = current.next;
+            current.next = toRemove.next;
+            
+            if (toRemove.next != null) {
+                toRemove.next.prev = current;
+            } else {
+                tail = current;
+            }
+            
+            System.out.println("Node setelah " + keyNim + " berhasil dihapus");
+        }
+    
+        public void remove(int index) {
+            if (isEmpty() || index < 0) {
+                System.out.println("List kosong atau index tidak valid!");
+                return;
+            }
+            
+            if (index == 0) {
+                removeFirst();
+                return;
+            }
+            
+            Node22 current = head;
+            int currentIndex = 0;
+            
+            while (current != null && currentIndex < index) {
+                current = current.next;
+                currentIndex++;
+            }
+            
+            if (current == null) {
+                System.out.println("Index melebihi panjang list!");
+                return;
+            }
+            
+            if (current == tail) {
+                removeLast();
+                return;
+            }
+            
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
+            
+            System.out.println("Node pada index " + index + " berhasil dihapus");
+        }
+    
+        public Mahasiswa22 getFirst() {
+            if (isEmpty()) {
+                System.out.println("List kosong!");
+                return null;
+            }
+            return head.data;
+        }
+    
+        public Mahasiswa22 getLast() {
+            if (isEmpty()) {
+                System.out.println("List kosong!");
+                return null;
+            }
+            return tail.data;
+        }
+    
+        public Mahasiswa22 getIndex(int index) {
+            if (isEmpty() || index < 0) {
+                System.out.println("List kosong atau index tidak valid!");
+                return null;
+            }
+            
+            Node22 current = head;
+            int currentIndex = 0;
+            
+            while (current != null && currentIndex < index) {
+                current = current.next;
+                currentIndex++;
+            }
+            
+            if (current == null) {
+                System.out.println("Index melebihi panjang list!");
+                return null;
+            }
+            
+            return current.data;
+        }
+    
+        public int size() {
+            int count = 0;
+            Node22 current = head;
+            
+            while (current != null) {
+                count++;
+                current = current.next;
+            }
+            
+            return count;
+        }
+    
+        public Mahasiswa22 search(String nim) {
+            Node22 current = head;
+            
+            while (current != null) {
+                if (current.data.nim.equals(nim)) {
+                    return current.data;
+                }
+                current = current.next;
+            }
+            
+            return null;
+        }
+    }
+
